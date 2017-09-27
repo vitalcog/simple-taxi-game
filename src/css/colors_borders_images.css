@@ -1,0 +1,23 @@
+body {
+  background-color: skyblue;
+}
+
+.occupied {
+  background-image: url(./taxi-icon.jpg);
+  background-size: contain;
+  outline: 1px solid brown;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.gridUnit {
+  background-color: orange;
+  outline: 1px solid brown;
+  padding-top: 40px;
+  text-align: center;
+}
+
+#grid {
+  border: 4px solid brown;
+  border-radius: 8px;
+}
