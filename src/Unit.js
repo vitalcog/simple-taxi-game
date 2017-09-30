@@ -6,22 +6,35 @@ import './css/layout.css';
 import './css/colors_borders_images.css';
 
 class Unit extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      occupied: false,
-    }
-  }
 
   render() {
 
-    const gridUnit =
-    this.props.X === this.props.playerX &&
-    this.props.Y === this.props.playerY ?
-    "occupied" : "gridUnit"
+    let gridUnit = "gridUnit"
+
+    if (
+      this.props.X === this.props.playerX &&
+      this.props.Y === this.props.playerY) {
+        gridUnit = "occupied"
+      } else if (
+        this.props.X === this.props.pedestrianX &&
+        this.props.Y === this.props.pedestrianY) {
+          gridUnit = "pedestrian"
+        } else if (
+          this.props.X === this.props.homeX &&
+          this.props.Y === this.props.homeY) {
+            gridUnit = "home"
+          } else if (
+            this.props.X === this.props.fuelX &&
+            this.props.Y === this.props.fuelY) {
+              gridUnit = "fuel"
+            } else if (
+              this.props.X === this.props.pineappleX &&
+              this.props.Y === this.props.pineappleY) {
+                gridUnit = "pineapple"
+              }
 
     return(
-      <div className={gridUnit}>x={this.props.X} y={this.props.Y}</div>
+      <div className={gridUnit}></div>
     )
   }
 }
@@ -34,6 +47,14 @@ function state2props(state){
     score: state.score,
     playerX: state.playerX,
     playerY: state.playerY,
+    pedestrianX: state.pedestrianX,
+    pedestrianY: state.pedestrianY,
+    homeX: state.homeX,
+    homeY: state.homeY,
+    fuelX: state.fuelX,
+    fuelY: state.fuelY,
+    pineappleX: state.pineappleX,
+    pineappleY: state.pineappleY,
   }
 }
 

@@ -7,10 +7,11 @@ import './css/colors_borders_images.css';
 class ControlPanel extends Component {
 
   render() {
+
     return(
       <div id="panel">
         <p>Gas: {this.props.gas}</p>
-        <p>Score: {this.props.score}</p>
+        <p>Score: $ {this.props.score}</p>
         <p>Position: {this.props.playerX}, {this.props.playerY}</p>
         <section>
           <button onClick={() => this.props.up()}>UP</button>
